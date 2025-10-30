@@ -35,11 +35,11 @@ public class Gun {
     
     public Gun(){};
     
-    public Gun(String name, String ammo, String country, int price){
+    public Gun(String name, String ammo, int price, String country){
         this.name = name;
         this.ammo = ammo;
-        this.country = country;
         this.price = price;
+        this.country = country;
     }
 
     /**

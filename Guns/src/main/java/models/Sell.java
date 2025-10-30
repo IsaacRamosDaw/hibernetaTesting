@@ -8,7 +8,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import jakarta.persistence.Id;
 import jakarta.persistence.Column;
-import java.util.Date;
+import java.time.LocalDateTime;
 
 /**
  *
@@ -28,11 +28,11 @@ public class Sell {
     private int gun;
     
     @Column(name="date")
-    private Date fechaCompra;
+    private LocalDateTime fechaCompra;
     
     public Sell(){};
     
-    public Sell(int user, int gun, Date fechaCompra){
+    public Sell(int user, int gun, LocalDateTime fechaCompra){
         this.user = user;
         this.gun = gun;
         this.fechaCompra = fechaCompra;
@@ -81,19 +81,20 @@ public class Sell {
     }
 
     /**
-     * @return the date
+     * @return the LocalDateTime
      */
-    public Date getDate() {
+    public LocalDateTime getLocalDateTime() {
         return fechaCompra;
     }
 
     /**
-     * @param date the date to set
+     * @param LocalDateTime the LocalDateTime to set
      */
-    public void setDate(Date fechaCompra) {
+    public void setLocalDateTime(LocalDateTime fechaCompra) {
         this.fechaCompra = fechaCompra;
     }
     
+    @Override
     public String toString(){
         return "Venta id = " + id + "arma id = " + gun + " user = " + user + " fecha de compra = " + fechaCompra;
     }

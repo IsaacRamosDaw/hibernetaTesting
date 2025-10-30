@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package views;
+
 import controllers.GunController;
 
 /**
@@ -10,14 +11,16 @@ import controllers.GunController;
  * @author Dante
  */
 public class GunView {
-        //String gunAgregado = new GunController().createGun();
-        //String gunEliminado = new GunController().deleteGun();
-        //String gunModificado = new GunController().updateGun();
-        //String getGun = new GunController().getGun();
-        
-        
-        //System.out.print(getGun);
-        //System.out.print(gunEliminado);
-        //System.out.print(gunModificado);
-        //System.out.print(gunEliminado);
+        public static void main(String[] args) {
+
+                //String gunCreado = new GunController().createGun("M4A4", "5.56", "USA", 700);
+                String gunModificado = new GunController().updateGun(1, "ArmaAniquiladora");
+                //String gunEliminado = new GunController().deleteGun(1);
+                // String getGun = new GunController().getGun();
+
+                //System.out.println(gunCreado);
+                //System.out.print(gunEliminado);
+                System.out.print(gunModificado);
+                // System.out.print(gunEliminado);
+        }
 }

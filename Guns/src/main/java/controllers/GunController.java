@@ -4,6 +4,7 @@
  */
 package controllers;
 
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.SessionFactory;
@@ -24,7 +25,7 @@ public class GunController {
     Session session = sessionFactory.openSession();
 
     try {
-      Gun gun = new Gun(name, ammo, country, price);
+      Gun gun = new Gun(name, ammo, price, country);
 
       session.beginTransaction();
 
@@ -35,7 +36,9 @@ public class GunController {
       sessionFactory.close();
 
       return "Arma Creado";
-    } catch (Exception e) {
+    } catch (HibernateException e) {
+    // } catch (Exception e) {
+    // Puede ser eliminado, por qué?
       e.printStackTrace();
     }
 
